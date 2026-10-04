@@ -111,7 +111,7 @@ namespace pryChiarenzaSP3
                 }
             }
 
-            // VERIFICAR 
+            // VERIFICAR DESCRIPCIÓN
             if (txtDescripcion.Text == "")
             {
                 MessageBox.Show("Debe ingresar una descripcion sobre el repuesto");
@@ -227,6 +227,17 @@ namespace pryChiarenzaSP3
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            // LIMPIAR DATOS QUE ESTABAN SIENDO INGRESADOS SIN BORRAR LOS REGISTROS YA CARGADOS
+
+            txtNumRepuesto.Clear();
+            txtDescripcion.Clear();
+            txtPrecio.Clear();
+
+            cmbMarca.SelectedIndex = -1;
+            rdbNacional.Checked = false;
+            rdbImportado.Checked = false;
+
+            txtNumRepuesto.Focus();
 
         }
     }
